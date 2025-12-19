@@ -8,8 +8,8 @@ products.forEach((product)=>{
               src="${product.image}">
           </div>
 
-          <div class="product-name limit-text-to-2-lines">
-              ${product.name}
+          <div class="product-id limit-text-to-2-lines">
+              ${product.id}
           </div>
 
           <div class="product-rating-container">
@@ -41,12 +41,12 @@ products.forEach((product)=>{
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart ">
             <img src="images/icons/checkmark.png">
             Added
           </div>
 
-          <button class="add-to-cart-button button-primary">
+          <button class="add-to-cart-button button-primary js-add-to-cart " data-product-id = "${product.id}">
             Add to Cart
           </button>
         </div>
@@ -54,3 +54,24 @@ products.forEach((product)=>{
 });
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
+document.querySelectorAll('.js-add-to-cart').forEach((button) => {
+  button.addEventListener('click',() => {
+  const productId =  button.dataset.productId;
+  let matchingItem;
+    cart.forEach((item) => {
+      if(productId === item.productId){
+        matchingItem = item;
+      }
+    });
+  if(matchingItem){ 
+   matchingItem.quantity += 1;
+   }else{ 
+    cart.push({
+    productId: productId, 
+    quantity: 1
+  }); 
+ }
+  console.log(cart);
+ });
+});
