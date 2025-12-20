@@ -13,6 +13,19 @@ const products = [
       "sports",
       "apparel"
     ]
+  },{
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name:"Backpack",
+    rating:{
+      stars: 4,
+      count: 34
+    },
+    priceCents: 3409,
+    keywords:[
+      "bag",
+      "backpack"
+    ]
   },
   {
     id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
