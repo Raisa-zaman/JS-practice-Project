@@ -31,9 +31,8 @@ export function removeFromCart(productId){
   newCart.push(cartItem);
  }
  });
- console.log(newCart);
 cart = newCart;
-
+console.log(cart);
 }
 
 
