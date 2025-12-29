@@ -53,6 +53,4 @@ export function calculateCartQuantity(){
  cartQuantity  += cartItem.quantity;
 });
 return cartQuantity;
-
-document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
